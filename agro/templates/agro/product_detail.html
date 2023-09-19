@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }} Details</title>
+    <!-- Include your CSS stylesheets and JavaScript libraries here -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{{ product.name }} Details</h1>
+    </header>
+    <main>
+        <div class="container mx-auto py-6">
+            <div class="bg-white shadow-md rounded-md p-4">
+                <h2 class="text-lg font-semibold">{{ product.name }}</h2>
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="mb-4 max-w-full h-auto" style="width: 400px;">
+                <p class="text-gray-500 mb-2">Seller: {{ product.seller }}</p>
+                <p class="text-gray-500 mb-2">Location: {{ product.location }}</p>
+                <p class="text-gray-700">Price: ${{ product.price }}</p>
+                <p class="text-gray-700">Available Quantity: {{ product.quantity }}</p>
+                <p class="text-gray-700">Description: {{ product.description }}</p>
+                
+                <!-- Add any additional product details here -->
+
+                <a href="{% url 'agro:product_list' %}" class="text-blue-500 hover:underline">Back to Product List</a>
+            </div>
+        </div>
+    </main>
+    <!-- Include your footer if needed -->
+</body>
+</html>

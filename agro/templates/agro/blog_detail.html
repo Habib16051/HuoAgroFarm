@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }} - Blog</title>
+    <!-- Include your CSS stylesheets and JavaScript libraries here -->
+</head>
+<body>
+    <header>
+        {% comment %} <h1>{{ post.title }}</h1>
+        <p>Author: {{ post.author }}</p>
+        <p>Date Posted: {{ post.date_posted }}</p> {% endcomment %}
+    </header>
+    <main>
+        <div class="container mx-auto py-6">
+            <div class="bg-white shadow-md rounded-md p-4">
+                <h2 class="text-lg font-semibold">{{ post.title }}</h2>
+                <p class="text-gray-500 mb-2">Author: {{ post.author }}</p>
+                <p class="text-gray-500 mb-2">Date Posted: {{ post.date_posted }}</p>
+                <p class="text-gray-700">{{ post.content|safe }}</p>
+            </div>
+        </div>
+    </main>
+    <!-- Include your footer if needed -->
+</body>
+</html>
