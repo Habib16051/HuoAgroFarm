@@ -1,9 +1,19 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.views import View
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from .models import Product, FarmerProfile, Review, BlogPost
 from .forms import ReviewForm  # Import any necessary forms
+
+
+# HomePage
+
+class HomePageView(TemplateView):
+    template_name = 'agro/home.html'
+
+
+# Product CRUD
+    
 
 # View for listing agricultural products
 class ProductListView(ListView):

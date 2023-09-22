@@ -3,7 +3,10 @@ from . import views
 
 app_name = 'agro'  # Define an app namespace
 
-urlpatterns = [
+urlpatterns = [ 
+               
+    # Home page
+    path('', views.HomePageView.as_view(), name='home'),
     # URL patterns for agricultural products
     path('products/', views.ProductListView.as_view(), name='product_list'),
     path('products/<int:pk>/', views.ProductDetailView.as_view(), name='product_detail'),
