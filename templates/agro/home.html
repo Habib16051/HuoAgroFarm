@@ -1,39 +1,195 @@
-{% load static %}
+{% extends "agro/base.html" %}
 <!DOCTYPE html>
 <html lang="en">
+  <!-- Head Section -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'tw/output.css' %}" />
-    <title>HuoAgroFarm</title>
+
+    <title>{% block title %} Official-Huo-Agro-Farm {% endblock title %}</title>
   </head>
-  <body>
-    <div class="p-20">
-      <h1
-        class="bg-green-500 text-center p-4 rounded-lg text-lg hover:bg-pink-600 hover:text-white text-transform: uppercase;"
-      >
-        Welcome to my Agricultural Initiative!!
-      </h1>
-    </div>
 
-<section class="ml-6 bg-slate-200 mr-4 rounded-lg">
-    <div class="justify-content-center">
-      <p class="p-6">
-        My primary goal is to provide a better experience for our farmers and
-        small business owener who can get benifit through this site.Agriculture
-        farming is very important part for life of people. It is the important
-        source of economy and food. over the previous years, this area has seen
-        a lot of changes and advancement in the diverse cultivating approaches
-        and techniques. For example, these days, there is the utilization of
-        inorganic compost, the utilization of decreased amount of pesticides,
-        the utilization of various work vehicles and machinery. The
-        accessibility of such data sources has seen the requirement for the
-        utilization of regular assets and cycle with point of improving
-        agriculture yield and decreasing expenses. The utilization of newideas
-        in farming accompanies a great deal of advantages
-      </p>
-    </div>
+  <!-- End Head Section -->
 
-</section>
+  <!-- Body -->
+  {% block content %}
+  <body class="bg-green-700 text-white ml-4 tracking-wider">
+    <header>
+      <nav class="container flex justify-between items-center">
+        <div class="text-2xl text-red-600 font-bold">
+          <a href="#home"> <span class="text-white">Huo</span> Farm </a>
+        </div>
+        <div>
+          <ul class="hidden lg:flex pt-2 items-center space-x-10">
+            <li>
+              <a href="#home" class="hover:text-red-500 ease-in duration-200"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#products"
+                class="hover:text-red-500 ease-in duration-200"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a
+                href="#testimonial"
+                class="hover:text-red-500 ease-in duration-200"
+                >Testimonial</a
+              >
+            </li>
+            <li>
+              <a href="#pricing" class="hover:text-red-500 ease-in duration-200"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a href="#blog" class="hover:text-red-500 ease-in duration-200"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-red-500 ease-in duration-200"
+                >Contact</a
+              >
+            </li>
+
+            <li>
+              <button class="bg-pink-700 rounded-lg p-2 hover:bg-violet-700">
+                Submit
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Mobile Screen -->
+        <div id="hamburger" class="lg:hidden cursor-pointer z-50">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div id="menu" class="hidden bg-cyan-800 h-[100vh] absolute inset-0">
+          <ul class="h-full grid place-items-center py-20">
+            <li>
+              <a
+                id="hLink"
+                href="#home"
+                class="hover:text-red-500 ease-in duration-200"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                id="hLink"
+                href="#products"
+                class="hover:text-red-500 ease-in duration-200"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a
+                id="hLink"
+                href="#testimonial"
+                class="hover:text-red-500 ease-in duration-200"
+                >Testimonial</a
+              >
+            </li>
+            <li>
+              <a
+                id="hLink"
+                href="#pricing"
+                class="hover:text-red-500 ease-in duration-200"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a
+                id="hLink"
+                href="#blog"
+                class="hover:text-red-500 ease-in duration-200"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a
+                id="hLink"
+                href=""
+                class="hover:text-red-500 ease-in duration-200"
+                >Contact</a
+              >
+            </li>
+
+            <li>
+              <button class="btn">Submit</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="relative">
+        <div
+          class="w-80 h-80 bg-color-blob absolute top-0 -left-5 -z-10 blur-2xl opacity-30 overflow-hidden rounded-full"
+        ></div>
+        <div
+          class="w-80 h-80 bg-color-secondary absolute bottom-10 right-0 -z-10 blur-2xl opacity-30 overflow-hidden rounded-full"
+        ></div>
+        <div class="container py-20">
+          <div class="flex flex-col items-center z-20 md:flex-row">
+            <div class="text-center mb-12 md:text-left md:w-1/2 md:pr-10">
+              <h1 class="title">Hello Huo Academy</h1>
+
+              <p class="leading-relaxed mb-10">
+                This would be the fantastic website for all the farmers in
+                Bangladesh!
+              </p>
+
+              <br />
+
+              <button class="btn">Download</button>
+            </div>
+
+            <div class="md:w-1/2">
+              <img src="media/img/hero4.png" alt="" />
+            </div>
+
+            <!-- <img src="media/product_images/Orange.jpg" alt=""> -->
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="bg-color-primary-light">
+        <div class="container py-20">
+            <div class="text-center m-auto mb-20 md:w-1/2">
+                <h4 class="font-bold text-color-secondary mb-4">Our Products</h4>
+                <h1 class="title">Our main goal is to Help our beloved Bangladeshi Farmers!</h1>
+            </div>
+
+
+      </section>
+    </main>
+
+    <script>
+      //Mobile Menu
+      const hamburger = document.querySelector("#hamburger");
+      const menu = document.querySelector("#menu");
+      const hLink = document.querySelector("#hLink");
+      const faSolid = document.querySelector(".fa-solid");
+
+      hamburger.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        faSolid.classList.toggle("fa-xmark");
+      });
+
+      hLink.forEach((link) => {
+        link.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
+          faSolid.classList.toggle("fa-xmark");
+        });
+      });
+    </script>
   </body>
+  {% endblock content %}
 </html>
