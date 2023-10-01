@@ -12,9 +12,13 @@ class Product(models.Model):
     location = models.CharField(max_length=100)
     date_listed = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='product_images/')
+    
+    class Meta:
+        ordering = ['-date_listed', ]
 
     def __str__(self):
         return self.name
+    
 
 # Model for farmer profiles
 class FarmerProfile(models.Model):

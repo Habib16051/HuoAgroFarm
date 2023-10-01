@@ -1,14 +1,11 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from django.urls import reverse
 from django.views import View
 from django.views.generic import ListView, DetailView, TemplateView
-from .models import Product, FarmerProfile, Review, BlogPost
+from .models import Product, FarmerProfile, BlogPost
 from .forms import ReviewForm  # Import any necessary forms
-
-from django.core.mail import EmailMessage
 from .forms import ContactForm
-from django.conf import settings
 from django.core.mail import send_mail
 from django.views.generic.edit import FormView
 
@@ -19,13 +16,31 @@ class HomePageView(TemplateView):
 
 
 # Product CRUD
-    
+
 
 # View for listing agricultural products
+# class ProductListView(ListView):
+#     model = Product
+#     template_name = 'agro/product_list.html'
+#     context_object_name = 'products'
+
+
 class ProductListView(ListView):
     model = Product
     template_name = 'agro/product_list.html'
     context_object_name = 'products'
+    paginate_by = 5  # Number of items to display per page
+
+    def get_queryset(self):
+        return Product.objects.all()  # Modify the queryset as needed
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        paginator = Paginator(self.get_queryset(), self.paginate_by)
+        page = self.request.GET.get('page')
+        context['products'] = paginator.get_page(page)
+        return context
+
 
 # View for displaying a single product detail
 class ProductDetailView(DetailView):
@@ -34,6 +49,8 @@ class ProductDetailView(DetailView):
     context_object_name = 'product'
 
 # View for displaying a farmer's profile
+
+
 class FarmerProfileView(DetailView):
     model = FarmerProfile
     template_name = 'agro/farmer_profile.html'
@@ -42,6 +59,8 @@ class FarmerProfileView(DetailView):
     slug_url_kwarg = 'username'
 
 # View for submitting a review for a product
+
+
 class SubmitReviewView(View):
     template_name = 'agro/submit_review.html'
 
@@ -64,18 +83,22 @@ class SubmitReviewView(View):
         return render(request, self.template_name, {'form': form, 'product': product})
 
 # View for listing blog posts
+
+
 class BlogListView(ListView):
     model = BlogPost
     template_name = 'agro/blog_list.html'
     context_object_name = 'posts'
 
 # View for displaying a single blog post
+
+
 class BlogDetailView(DetailView):
     model = BlogPost
     template_name = 'agro/blog_detail.html'
     context_object_name = 'post'
-    
-    
+
+
 # Contacts view
 # views.py
 
@@ -120,4 +143,4 @@ class ContactView(FormView):
 #     else:
 #         form = ContactForm()
 
-#     return render(request, 'contact.html', {'form': form}) 
+#     return render(request, 'contact.html', {'form': form})
