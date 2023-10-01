@@ -1,36 +1,54 @@
-<!DOCTYPE html>
+{% extends "agro/base.html" %}
 {% load static %}
+<!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ product.name }} Details</title>
     <!-- Include your CSS stylesheets and JavaScript libraries here -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
 </head>
+
 <body>
     <header>
         <h1>{{ product.name }} Details</h1>
     </header>
-    <main>
+
+
+    {% block content %}
+
+    <main class="bg-lime-500 p-10">
         <div class="container mx-auto py-6">
-            <div class="bg-white shadow-md rounded-md p-4">
-                <a href="/"> <span class="text-green-500">Huo</span>Farm </a>
-                <h2 class="text-lg font-semibold">{{ product.name }}</h2>
-                
-                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="mb-4 max-w-full h-auto" style="width: 400px;">
+            <div class="bg-slate-400 shadow-md rounded-md p-4">
+                <a href="/"> <span class="text-green-500 font-bold">Huo</span>Farm </a>
+                <h2 class="text-lg font-semibold pt-4">{{ product.name }}</h2>
+
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="mb-4 max-w-full h-auto rounded-lg"
+                    style="width: 400px;">
                 <p class="text-gray-500 mb-2">Seller: {{ product.seller }}</p>
                 <p class="text-gray-500 mb-2">Location: {{ product.location }}</p>
                 <p class="text-gray-700">Price: ${{ product.price }}</p>
                 <p class="text-gray-700">Available Quantity: {{ product.quantity }}</p>
-                <p class="text-gray-700">Description: {{ product.description }}</p>
-                
-                <!-- Add any additional product details here -->
+                <p class="text-gray-800">Description: {{ product.description }}</p>
 
-                <a href="{% url 'agro:product_list' %}" class="text-blue-500 hover:underline">Back to Product List</a>
+                <!-- Add any additional product details here -->
+                <div class="pt-2">
+
+                    <a href="{% url 'agro:product_list' %}" class="text-blue-500 font-bold hover:text-pink-500">Back
+                        Product List</a>
+                </div>
+
             </div>
         </div>
     </main>
+
+    {% endblock content %}
+
+
     <!-- Include your footer if needed -->
 </body>
+
 </html>
