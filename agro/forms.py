@@ -15,3 +15,9 @@ class ReviewForm(forms.ModelForm):
         max_length=500,
         help_text="Write your review here (maximum 500 characters).",
     )
+
+# contact/forms.py
+class ContactForm(forms.Form):
+    email = forms.EmailField(required=True)
+    subject = forms.CharField(max_length=200)
+    message = forms.CharField(widget=forms.Textarea)

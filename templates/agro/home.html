@@ -1,4 +1,5 @@
 {% extends "agro/base.html" %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,12 +7,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %} Huo Farm {% endblock title %}</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <title>{% block title %}Huo Farm{% endblock title %}</title>
 
+    <!-- <script src="{% static 'js/carousel.js' %}"></script> -->
+
+    {% comment %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> {% endcomment %}
 
 </head>
 
@@ -21,24 +24,26 @@
     <header class="sticky top-0 z-50">
         <nav class="container flex justify-between items-center">
             <div class="py-5 text-rose-600 font-bold text-3xl">
-                <a href="#home"> <span class="text-green-500">Huo</span>Farm </a>
+                <a href="/"> <span class="text-green-500">Huo</span>Farm </a>
             </div>
             <div>
                 <ul class="hidden lg:flex items-center space-x-6">
                     <li>
-                        <a href="#home" class="hover:text-color-secondary ease-in duration-200">Home</a>
+                        <a href="/" class="hover:text-color-secondary ease-in duration-200">Home</a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-color-secondary ease-in duration-200">Products</a>
+                        <a href="{% url 'agro:product_list' %}"
+                            class="hover:text-color-secondary ease-in duration-200">Products</a>
                     </li>
                     <li>
-                        <a href="#services" class="hover:text-color-secondary ease-in duration-200">Services</a>
+                        <a href="#agrotech" class="hover:text-color-secondary ease-in duration-200">AgroTech</a>
                     </li>
                     <li>
                         <a href="#seasons" class="hover:text-color-secondary ease-in duration-200">Seasons</a>
                     </li>
                     <li>
-                        <a href="#blog" class="hover:text-color-secondary ease-in duration-200">Blog</a>
+                        <a href="{% url 'agro:blog_list' %}"
+                            class="hover:text-color-secondary ease-in duration-200">Blog</a>
                     </li>
                     <li>
                         <a href="#contact" class="hover:text-color-secondary ease-in duration-200">Contact</a>
@@ -110,6 +115,8 @@
                         <img class="rounded-full w-3/4 space-x-4" src="./media/img/hero01.jpg" alt="" />
 
 
+                        <!-- Carousel -->
+
                     </div>
                 </div>
             </div>
@@ -163,7 +170,7 @@
             </div>
         </section>
 
-        <section id="saving-money">
+        <section id="agrotech">
             <div class="container py-20 relative">
                 <div class="blob1"></div>
 
@@ -175,7 +182,7 @@
                     </div>
 
                     <div class="text-center md:text-left md:w-1/2 md:ml-20">
-                        <h2 class="font-bold text-pink-500 mb-4 text-2xl">Agrotechnology</h2>
+                        <h2 class="font-bold text-pink-500 mb-4 text-2xl">Agro Technology</h2>
                         <h4 class="title mb-4">Best Useful Website To Save Corps and Land</h3>
                             <p class="leading-relaxed mb-10">
                                 Best financing app ever in the world. Easy to use and very user
@@ -188,62 +195,63 @@
             </div>
         </section>
 
-        <section id="how-it-works" class="bg-color-primary-light">
+        <!-- <section id="how-it-works" class="bg-color-primary-light">
             <div class="container py-20">
                 <div class="text-center m-auto mb-20 md:w-1/2">
                     <h4 class="font-bold text-pink-500 mb-4">How It Works</h4>
-                    <h1 class="title">Grow Up Your Money Saving</h1>
+                    <h1 class="title">Grow Up Your Corps and Utilize your Land</h1>
                 </div>
 
-                <div class="flex flex-col items-center justify-between space-y-6 md:flex-row md:space-y-0 md:space-x-6">
-                    <!-- card 1  -->
-                    <div class="text-center cursor-pointer">
+                <div class="flex flex-col items-center justify-between space-y-6 md:flex-row md:space-y-0 md:space-x-6"> -->
+        <!-- card 1  -->
+        <!-- <div class="text-center cursor-pointer">
                         <div
                             class="relative bg-color-primary-dark inline-block px-6 py-3 rounded-lg cursor-pointer hover:bg-color-secondary ease-in duration-200">
                             <p
-                                class="text-6xl lg:after:content-[''] lg:after:flex lg:after:bg-[url('./media/img/line.png')] lg:after:absolute lg:after:top-4 lg:after:left-32 2xl:after:left-52 lg:after:bg-no-repeat lg:after:h-7 lg:after:w-52">
+                                class="text-6xl lg:after:content-[''] lg:after:flex lg:after:bg-[url('#')] lg:after:absolute lg:after:top-4 lg:after:left-32 2xl:after:left-52 lg:after:bg-no-repeat lg:after:h-7 lg:after:w-52">
                                 1
                             </p>
                         </div>
-                        <h3 class="text-xl font-bold py-4">Install The App</h3>
+                        <h3 class="text-xl font-bold py-4">Visit Our Website</h3>
                         <p class="leading-relaxed">
-                            We use an application designed a testing gnose to keep away
+                            We build our website using our built-in features and technologies provided by our developers
                         </p>
-                    </div>
+                    </div> -->
 
-                    <!-- card 2  -->
-                    <div class="text-center cursor-pointer">
+        <!-- card 2  -->
+        <!-- <div class="text-center cursor-pointer">
                         <div class="relative inline-block px-6 py-3 rounded-lg cursor-pointer bg-color-secondary">
                             <p
-                                class="text-6xl lg:after:content-[''] lg:after:flex lg:after:bg-[url('./media/img/line-bottom.png')] lg:after:absolute lg:after:top-10 lg:after:left-32 2xl:after:left-52 lg:after:bg-no-repeat lg:after:h-7 lg:after:w-52">
+                                class="text-6xl lg:after:content-[''] lg:after:flex lg:after:bg-[url('#')] lg:after:absolute lg:after:top-10 lg:after:left-32 2xl:after:left-52 lg:after:bg-no-repeat lg:after:h-7 lg:after:w-52">
                                 2
                             </p>
                         </div>
                         <h3 class="text-xl font-bold py-4">Setup Your Profile</h3>
                         <p class="leading-relaxed">
-                            We use an application designed a testing gnose to keep away
+                            We will be creating a new profile and we will configure your application to use the
+                            following features
                         </p>
-                    </div>
-                    <!-- card 3  -->
-                    <div class="text-center cursor-pointer">
+                    </div> -->
+        <!-- card 3  -->
+        <!-- <div class="text-center cursor-pointer">
                         <div
                             class="relative bg-color-primary-dark inline-block px-6 py-3 rounded-lg cursor-pointer hover:bg-color-secondary ease-in duration-200">
                             <p class="text-6xl">3</p>
                         </div>
                         <h3 class="text-xl font-bold py-4">Enjoy The Features!</h3>
                         <p class="leading-relaxed">
-                            We use an application designed a testing gnose to keep away
+                            The More robust and easy to understand
                         </p>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <section id="testimonial">
             <div class="container py-20">
                 <div class="text-center m-auto mb-20 md:w-1/2">
-                    <h4 class="font-bold text-pink-500 mb-4">User Review</h4>
-                    <h4 class="title">What Clients Say About Our App After Use It</h4>
+                    <h4 class="font-bold text-pink-500 mb-4">Farmer's Review</h4>
+                    <h4 class="title">What Clients Say About Our website After Use It</h4>
                 </div>
 
                 <!-- review container  -->
@@ -327,13 +335,13 @@
 
                     <!-- Rounded switch  -->
                     <div class="mt-5 flex items-center justify-center gap-4">
-                        <p>Bill Monthly</p>
+                        <p>First Three</p>
                         <label class="cursor-pointer relative inline-block w-20 h-8 rounded-full">
                             <input type="checkbox" id="toggleBtn" class="peer opacity-0 w-0 h-0" />
                             <span
                                 class="absolute top-0 left-0 right-0 bottom-0 bg-color-primary-light border border-solid border-color-gray rounded-full duration-300 before:content-[''] before:absolute before:w-6 before:h-6 before:bottom-1 before:left-1 before:rounded-full before:bg-color-white before:duration-300 peer-checked:before:translate-x-12 peer-checked:bg-color-secondary"></span>
                         </label>
-                        <p>Bill Anually</p>
+                        <p>Last Three</p>
                     </div>
                 </div>
 
@@ -351,7 +359,7 @@
                             </div>
 
                             <div class="py-10">
-                                <h3 class="text-xl font-bold pb-3">Basic</h3>
+                                <h3 class="text-xl font-bold pb-3">Summer</h3>
                                 <p class="leading-relaxed">
                                     For Beginner Who Want To Scale Business Globaly
                                 </p>
@@ -394,7 +402,7 @@
                             </div>
 
                             <div class="py-10">
-                                <h3 class="text-xl font-bold pb-3">Basic</h3>
+                                <h3 class="text-xl font-bold pb-3">Late Autumn</h3>
                                 <p class="leading-relaxed">
                                     For Beginner Who Want To Scale Business Globaly
                                 </p>
@@ -440,7 +448,7 @@
                             </div>
 
                             <div class="py-10">
-                                <h3 class="text-xl font-bold pb-3">Standard</h3>
+                                <h3 class="text-xl font-bold pb-3">Rainy</h3>
                                 <p class="leading-relaxed">
                                     For Beginner Who Want To Scale Business Globaly
                                 </p>
@@ -483,7 +491,7 @@
                             </div>
 
                             <div class="py-10">
-                                <h3 class="text-xl font-bold pb-3">Standard</h3>
+                                <h3 class="text-xl font-bold pb-3">Winter</h3>
                                 <p class="leading-relaxed">
                                     For Beginner Who Want To Scale Business Globaly
                                 </p>
@@ -529,7 +537,7 @@
                             </div>
 
                             <div class="py-10">
-                                <h3 class="text-xl font-bold pb-3">Basic</h3>
+                                <h3 class="text-xl font-bold pb-3">Autumn</h3>
                                 <p class="leading-relaxed">
                                     For Beginner Who Want To Scale Business Globaly
                                 </p>
@@ -572,7 +580,7 @@
                             </div>
 
                             <div class="py-10">
-                                <h3 class="text-xl font-bold pb-3">Premium</h3>
+                                <h3 class="text-xl font-bold pb-3">Spring</h3>
                                 <p class="leading-relaxed">
                                     For Beginner Who Want To Scale Business Globaly
                                 </p>
@@ -736,30 +744,28 @@
         <section id="contact">
             <div class="container py-20">
                 <div class="text-center m-auto mb-20 md:w-1/2">
-                    <h4 class="font-bold text-pink-500 mb-4">
-                        Have A Questation
+                    <h4 class="font-bold text-pink-500 mb-4 text-2xl">
+                        Have A Question?
                     </h4>
-                    <h1 class="title">Get In Touch</h1>
+                    <h3 class="title">Get In Touch</h3>
                 </div>
 
-                <form>
+                <!-- Contact Form -->
+                <div class="flex justify-center items-center text-black">
+                    {% include 'contact.html' %}
+
+                </div>
+
+                <!-- <form>
                     <div class="w-full m-auto text-center md:w-2/3">
                         <div class="text-color-primary-dark grid gap-6 mb-6 md:grid-cols-2">
-                            <input type="text"
-                                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary"
-                                placeholder="Name" />
-
                             <input type="email"
                                 class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary"
                                 placeholder="Email" />
 
-                            <input type="tel"
-                                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary"
-                                placeholder="Phone" />
-
                             <input type="text"
                                 class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary"
-                                placeholder="Company" />
+                                placeholder="Subject" />
                         </div>
 
                         <textarea rows="4"
@@ -768,8 +774,10 @@
 
                         <button class="btn mt-10">Send Message</button>
                     </div>
-                </form>
+                </form> -->
             </div>
+
+
         </section>
 
         <section id="footer">
@@ -790,7 +798,8 @@
                                         class="fa-brands fa-linkedin cursor-pointer hover:text-color-secondary"></i></a>
                                 <a href="https://www.youtube.com/channel/UCmwBAWWUqT6Uiv-ssmLrAtg"><i
                                         class="fa-brands fa-youtube cursor-pointer hover:text-color-secondary"></i> </a>
-                                <i class="fa-brands fa-github cursor-pointer hover:text-color-secondary"></i>
+                                <a href="https://github.com/Habib16051"><i
+                                        class="fa-brands fa-github cursor-pointer hover:text-color-secondary"></i></a>
                             </div>
                         </div>
                         <div class="flex justify-between md:justify-around">
@@ -801,16 +810,16 @@
                                         <a href="#">Home</a>
                                     </li>
                                     <li class="underline hover:no-underline hover:text-color-secondary">
-                                        <a href="#products">Products</a>
+                                        <a href="{% url 'agro:product_list' %}">Products</a>
                                     </li>
                                     <li class="underline hover:no-underline hover:text-color-secondary">
-                                        <a href="#services">Services</a>
+                                        <a href="#agrotech">AgroTech</a>
                                     </li>
                                     <li class="underline hover:no-underline hover:text-color-secondary">
                                         <a href="#seasons">Seasons</a>
                                     </li>
                                     <li class="underline hover:no-underline hover:text-color-secondary">
-                                        <a href="#blog">Blog</a>
+                                        <a href="{% url 'agro:blog_list' %}">Blog</a>
                                     </li>
                                     <li class="underline hover:no-underline hover:text-color-secondary">
                                         <a href="#contact">Contact</a>
@@ -883,6 +892,8 @@
             }
         };
 
+
+
         // Mobile menu
         const hamburger = document.querySelector("#hamburger");
         const menu = document.querySelector("#menu");
@@ -940,8 +951,10 @@
             card_3_front.classList.toggle("-rotate-y-180");
             card_3_back.classList.toggle("rotate-y-180");
         });
+
+
     </script>
-    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+
 </body>
 {% endblock content %}
 

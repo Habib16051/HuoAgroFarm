@@ -1,13 +1,19 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 from django.views import View
 from django.views.generic import ListView, DetailView, TemplateView
 from .models import Product, FarmerProfile, Review, BlogPost
 from .forms import ReviewForm  # Import any necessary forms
 
+from django.core.mail import EmailMessage
+from .forms import ContactForm
+from django.conf import settings
+from django.core.mail import send_mail
+from django.views.generic.edit import FormView
+
 
 # HomePage
-
 class HomePageView(TemplateView):
     template_name = 'agro/home.html'
 
@@ -68,3 +74,50 @@ class BlogDetailView(DetailView):
     model = BlogPost
     template_name = 'agro/blog_detail.html'
     context_object_name = 'post'
+    
+    
+# Contacts view
+# views.py
+
+class ContactView(FormView):
+    template_name = 'contact.html'
+    form_class = ContactForm
+    success_url = 'success/'  # Redirect URL upon successful form submission
+
+    def form_valid(self, form):
+        email = form.cleaned_data['email']
+        subject = form.cleaned_data['subject']
+        message = form.cleaned_data['message']
+
+        send_mail(
+            subject,
+            message,
+            'huo143@gmail.com',  # Sender's email address
+            [email],  # Recipient's email address
+            fail_silently=False,
+        )
+        return super().form_valid(form)
+
+
+# Function based Contact View Controller
+
+# def contact(request):
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             email = form.cleaned_data['email']
+#             subject = form.cleaned_data['subject']
+#             message = form.cleaned_data['message']
+
+#             send_mail(
+#                 subject,
+#                 message,
+#                 'huo143@gmail.com',  # Sender's email address
+#                 [email],  # Recipient's email address
+#                 fail_silently=False,
+#             )
+#             return render(request, 'success.html')  # Redirect to a success page
+#     else:
+#         form = ContactForm()
+
+#     return render(request, 'contact.html', {'form': form}) 

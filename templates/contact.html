@@ -1,0 +1,80 @@
+{% extends "agro/base.html" %}
+{% load static %}
+
+<!-- 
+<form action="/contact/" method="post">
+  {% csrf_token %} {% for field in form %}
+    <div class="fieldWrapper">{{ field.errors }} {{ field.label_tag }} {{ field }}</div>
+  {% endfor %}
+  <input type="submit" value="Submit" />
+</form> -->
+
+<!-- ##################################################################################################### -->
+
+
+{% block content %}
+
+<!-- <div class="p-10 rounded-xl">
+    <form action="/contact/" method="post" class="max-w-md mx-auto p-4 bg-white">
+        {% csrf_token %} {% for field in form %}
+          <div class="mb-4">{{ field.errors }} {{ field.label_tag }} {{ field }}</div>
+        {% endfor %}
+        <button type="submit" class="bg-green-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+      </form>
+
+</div> -->
+
+
+<div class="bg-gray-400 flex items-center justify-center ">
+    <div class="bg-green rounded-lg w-full max-w-md flex justify-center pt-10">
+        <!-- <h1 class="text-2xl font-bold mb-4 pt-6">Contact Us</h1> -->
+        <form action="/contact/" method="post">
+            {% csrf_token %}
+
+            <!-- Email Field -->
+            <div class="pt-6">
+                <label for="email" class="block text-white font-semibold pb-2">Email</label>
+                <input type="email" id="email" name="email"
+                    class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:border-green-500"
+                    placeholder="Enter your email" />
+                {% if form.email.errors %}
+                <p class="text-red-500 text-sm mt-1">{{ form.email.errors }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Subject Field -->
+            <div class="pt-6">
+                <label for="subject" class="block text-white font-semibold pb-2">Subject</label>
+                <input type="text" id="subject" name="subject"
+                    class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:border-green-500"
+                    placeholder="Enter the subject" />
+                {% if form.subject.errors %}
+                <p class="text-red-500 text-sm mt-1">{{ form.subject.errors }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Message Field -->
+            <div class="pt-6">
+                <label for="message" class="block text-white font-semibold pb-2">Message</label>
+                <textarea id="message" name="message" rows="4"
+                    class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:border-green-500"
+                    placeholder="Enter your message"></textarea>
+                {% if form.message.errors %}
+                <p class="text-red-500 text-sm mt-1">{{ form.message.errors }}</p>
+                {% endif %}
+            </div>
+
+            <div class="pt-6 flex justify-center">
+                <button type="submit"
+                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-green">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}

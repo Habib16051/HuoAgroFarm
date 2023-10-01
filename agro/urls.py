@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from django.views.generic import TemplateView
 
 app_name = 'agro'  # Define an app namespace
 
@@ -20,4 +21,11 @@ urlpatterns = [
     # URL patterns for blog posts
     path('blog/', views.BlogListView.as_view(), name='blog_list'),
     path('blog/<int:pk>/', views.BlogDetailView.as_view(), name='blog_detail'),
+    
+    # ContactsView URls for
+    path('contact/', views.ContactView.as_view(), name='contact'),
+    # It will be added if we use class based views
+    path('contact/success/', TemplateView.as_view(template_name='success.html'), name='success'),
+    
+
 ]
