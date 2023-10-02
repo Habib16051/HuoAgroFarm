@@ -1,31 +1,44 @@
+{% extends "agro/base.html" %} {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} Blog Posts {% endblock title %}</title>
     <!-- Include your CSS stylesheets and JavaScript libraries here -->
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Blog</h1>
+      <h1>Blog</h1>
     </header>
-    <main>
-        <div class="container mx-auto py-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {% for post in posts %}
-                    <div class="bg-white shadow-md rounded-md p-4">
-                        <h2 class="text-lg font-semibold">{{ post.title }}</h2>
-                        <p class="text-gray-500 mb-2">Author: {{ post.author }}</p>
-                        <p class="text-gray-700">{{ post.content|safe }}</p>
-                        <a href="{% url 'agro:blog_detail' post.id %}" class="text-blue-500 hover:underline">Read More</a>
-                    </div>
-                {% empty %}
-                    <p class="text-gray-700">No blog posts available.</p>
-                {% endfor %}
-            </div>
+
+    {% block content %}
+    <main class="p-10 bg-green-400">
+      <div class="container mx-auto py-6 bg-lime-500 rounded-xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 bg-slate-400">
+          {% for post in posts %}
+          <div class="bg-white rounded-md p-4">
+            <h2 class="text-lg font-semibold">{{ post.title }}</h2>
+            <p class="text-gray-500 mb-2">Author: {{ post.author }}</p>
+            <p class="text-gray-700">{{ post.content|truncatechars:200 }}</p>
+            <a
+              href="{% url 'agro:blog_detail' post.id %}"
+              class="text-blue-500 hover:underline"
+              >Read More</a
+            >
+          </div>
+          {% empty %}
+          <p class="text-gray-700">No blog posts available.</p>
+          {% endfor %}
         </div>
+      </div>
+
+      <!-- Pagination -->
+      {% include 'agro/pagination_blog.html' %}
+      <a href=""></a>
     </main>
+    {% endblock content %}
+
     <!-- Include your footer if needed -->
-</body>
+  </body>
 </html>

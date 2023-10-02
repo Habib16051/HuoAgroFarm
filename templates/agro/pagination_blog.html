@@ -1,0 +1,23 @@
+{% extends 'agro/base.html' %}
+
+{% block content %}
+
+  <div class="pagination_blog flex justify-center items-center">
+    <span class="step-links">
+      {% if posts.has_previous %}
+        <a href="?page=1" class="font-bold">&laquo; First</a>
+        <a href="?page={{ posts.previous_page_number }}" class="text-white font-bold">Previous</a>
+      {% endif %}
+      
+      {% comment %} <span class="current-page">{{ products.number }}</span> {% endcomment %}
+      <span class="current">
+        Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+    </span>
+      
+      {% if posts.has_next %}
+        <a href="?page={{ posts.next_page_number }}" class="font-bold">Next</a>
+        <a href="?page={{ posts.paginator.num_pages }}" class="text-white font-bold">Last &raquo;</a>
+      {% endif %}
+    </span>
+  </div>
+{% endblock %}

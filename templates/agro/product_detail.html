@@ -23,21 +23,30 @@
     <main class="bg-lime-500 p-10">
         <div class="container mx-auto py-6">
             <div class="bg-slate-400 shadow-md rounded-md p-4">
-                <a href="/"> <span class="text-green-500 font-bold">Huo</span>Farm </a>
-                <h2 class="text-lg font-semibold pt-4">{{ product.name }}</h2>
+                <a href="/" class="text-2xl font-bold text-green-700"> Huo Farm </a>
 
-                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="mb-4 max-w-full h-auto rounded-lg"
-                    style="width: 400px;">
-                <p class="text-gray-500 mb-2">Seller: {{ product.seller }}</p>
-                <p class="text-gray-500 mb-2">Location: {{ product.location }}</p>
+                <div class="flex justify-center pb-4 text-green-800 ">
+                    <h2 class="text-4xl">{{ product.name }}</h2>
+
+                </div>
+                
+
+                <div class="flex justify-center">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}"
+                        class="mb-4 max-w-full h-auto rounded-lg" style="width: 400px;">
+                </div>
+
+
+                <p class="text-gray-500">Seller: {{ product.seller }}</p>
+                <p class="text-gray-500">Location: {{ product.location }}</p>
                 <p class="text-gray-700">Price: ${{ product.price }}</p>
-                <p class="text-gray-700">Available Quantity: {{ product.quantity }}</p>
+                <p class="text-gray-700 pb-4">Available Quantity: {{ product.quantity }}</p>
                 <p class="text-gray-800">Description: {{ product.description }}</p>
 
                 <!-- Add any additional product details here -->
                 <div class="pt-2">
 
-                    <a href="{% url 'agro:product_list' %}" class="text-blue-500 font-bold hover:text-pink-500">Back
+                    <a href="{% url 'agro:product_list' %}" class="text-blue-600 font-bold">Back
                         Product List</a>
                 </div>
 

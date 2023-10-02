@@ -15,16 +15,6 @@ class HomePageView(TemplateView):
     template_name = 'agro/home.html'
 
 
-# Product CRUD
-
-
-# View for listing agricultural products
-# class ProductListView(ListView):
-#     model = Product
-#     template_name = 'agro/product_list.html'
-#     context_object_name = 'products'
-
-
 class ProductListView(ListView):
     model = Product
     template_name = 'agro/product_list.html'
@@ -49,8 +39,6 @@ class ProductDetailView(DetailView):
     context_object_name = 'product'
 
 # View for displaying a farmer's profile
-
-
 class FarmerProfileView(DetailView):
     model = FarmerProfile
     template_name = 'agro/farmer_profile.html'
@@ -59,8 +47,6 @@ class FarmerProfileView(DetailView):
     slug_url_kwarg = 'username'
 
 # View for submitting a review for a product
-
-
 class SubmitReviewView(View):
     template_name = 'agro/submit_review.html'
 
@@ -89,6 +75,19 @@ class BlogListView(ListView):
     model = BlogPost
     template_name = 'agro/blog_list.html'
     context_object_name = 'posts'
+    paginate_by = 6  # Number of items to display per page
+
+    def get_queryset(self):
+        return BlogPost.objects.all()  # Modify the queryset as needed
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        paginator = Paginator(self.get_queryset(), self.paginate_by)
+        page = self.request.GET.get('page')
+        context['posts'] = paginator.get_page(page)
+        return context
+    
+    
 
 # View for displaying a single blog post
 
