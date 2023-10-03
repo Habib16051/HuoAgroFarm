@@ -14,13 +14,19 @@
     />
 
     <title>{% block title %}{% endblock title %}</title>
-<!-- <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
 <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"> -->
-<link rel="shortcut icon" href="{% static 'images/icon02.png' %}" type="image/x-icon">
-
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/icon02.png' %}"
+      type="image/x-icon"
+    />
   </head>
   <body>
+    
+      {% block header %} {% endblock header %}
+
+    
     {% block content %} {% endblock content %}
-   
   </body>
 </html>

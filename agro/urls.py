@@ -27,5 +27,14 @@ urlpatterns = [
     # It will be added if we use class based views
     path('contact/success/', TemplateView.as_view(template_name='success.html'), name='success'),
     
+    
+    # Six Seasons
+    path('summer/', views.SummerView.as_view(), name='summer'),
+    path('rainy/', views.RainyView.as_view(), name='rainy'),
+    path('autumn/', views.AutumnView.as_view(), name='autumn'),
+    path('late_autumn/', views.LateAutumnView.as_view(), name='late_autumn'),
+    path('winter/', views.WinterView.as_view(), name='winter'),
+    path('spring/', views.SpringView.as_view(), name='spring'),
+    
 
 ]

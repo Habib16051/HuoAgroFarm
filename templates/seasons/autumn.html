@@ -1,0 +1,154 @@
+{% extends "agro/base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} Autumn Season {% endblock title %}</title>
+</head>
+
+<body>
+
+    {% block header %}
+
+    <div class="flex justify-center items-center font-bold text-2xl bg-green-500 ">
+        <button class=" pt-2 text-white py-2 rounded-lg ">Six Seasons in Bangladesh</button>
+    </div>
+    {% endblock header %}
+
+
+
+    {% block content %}
+    <main class="p-10 bg-slate-400 rounded-md">
+
+
+        <!-- DropDown Menu -->
+
+        <div class="relative pb-10">
+            <button class="font-bold bg-green-500 px-4 py-2 rounded-lg gap-4">Home</button>
+            <button id="dropdown-button" class="bg-green-500 text-white px-4 py-2 rounded-md focus:outline-none">
+                Dropdown
+            </button>
+            <div id="dropdown-options"
+                class="hidden absolute bottom-5 mt-2 py-2 w-48 border rounded-lg shadow-lg">
+                <!-- Dropdown options go here -->
+                <a href="{% url 'agro:summer' %}" class="block px-4 py-2 bg-gray-200 rounded-md mb-1">Summer Season</a>
+                <a href="{% url 'agro:rainy' %}" class="block px-4 py-2 bg-green-400 rounded-md mb-1">Rainy Season</a>
+                <a href="{% url 'agro:autumn' %}" class="block px-4 py-2 bg-gray-200 rounded-md mb-1">Autumn Season</a>
+                <a href="{% url 'agro:late_autumn' %}" class="block px-4 py-2 bg-green-400 rounded-md mb-1">Late-Autumn Season</a>
+                <a href="{% url 'agro:winter' %}" class="block px-4 py-2 bg-gray-200 rounded-md mb-1">Winter Season</a>
+                <a href="{% url 'agro:spring' %}" class="block px-4 py-2 bg-green-400 rounded-md mb-1">Spring Season</a>
+                <!-- Add more options as needed -->
+            </div>
+        </div>
+        <!-- End DropDown -->
+
+        <section>
+            <div class="flex justify-center pb-6">
+                <img src="{% static 'images/autumn.jpg' %}" alt="sumer-photo" class="rounded-lg w-1/3">
+            </div>
+
+        </section>
+
+        <section>
+
+            <p class="pb-3">
+                <strong>Introduction</strong>: Bangladesh is a land of six seasons and
+                land of beauties. The summer is the first season that lasts for
+                Baishakh and Jaisthya. It is the hottest and tiring season. It appears
+                with fruits and flowers but is accompanied by a dust storm that
+                sometimes causes much harm to men animals and plants. It sometimes
+                blows away trees and houses and sometimes causes death to men and
+                animals. The season occurs when the earth tilts towards the sun and
+                vice versa phenomenon for winter. In the southern hemisphere, December
+                to February are the summer months. The day becomes warmers and nights
+                become cooler. Besides, the day is longer and nights are shorter.
+            </p>
+        </section>
+
+        <section>
+            <p class="pb-3">
+                <strong>Description</strong> : During this season, the earth comes
+                nearer to the sun and gets more heat and light. The day becomes longer
+                than the night. As a result, the earth becomes so hot that man cannot
+                bear the heat. The rivers, ponds, canals, and pools dry up. People
+                sweat and get thirsty and tired out of extreme heat. A sometimes
+                strong north-east storm blows away trees and roofs of our houses.
+                Sometimes It causes death to many men and animals, So it is called
+                Kal-Baisakhi. A summer morning is a bit moderate and tolerable. The
+                sky remains clear and bright. People get up early in the morning from
+                bed. But it becomes hotter and hotter as the sun goes up. The sun
+                becomes very hot at noon. Then people do not dare go out and work for
+                a long time. The farmers and laborers have to work under the scorching
+                heat and dust. People gather in the shade of trees. The housewives
+                also get it very difficult to work in the kitchen. Students find it
+                very difficult to work in the class.
+            </p>
+        </section>
+
+        <section>
+            <p class="pb-3">
+                <strong>Advantages</strong>: The summer is the season of fruits and
+                flowers. Mangoes, jackfruits, blackberries, litchis, melons, and many
+                other juicy fruits grow in this season. Various kinds of flowers also
+                blossom in this time. And various kinds of anther fruits ripen. The
+                boy’s gifts enjoyed the summer holidays. Many festivals are observed
+                in summer such as charak puja, Bengali new year, Rabindra Jayanti,
+                etc.
+            </p>
+        </section>
+
+        <section>
+            <p class="pb-3">
+                <strong>Disadvantages</strong>: In this season people suffer for want
+                of water. Many diseases like cholera smallpox and measles break out.
+                In addition to these, men, animals, and plants fall a victim to storms
+                and cyclones. Sometimes drought destroys crops. In summer most of the
+                tanks and ponds dry up. Even the canals are without water. Villagers
+                suffer from heat and scarcity of water. So the farmers can’t irrigate
+                their lands properly. As a result, food production is hampered.
+
+                <br />
+                Whether humans, animals, or birds all become very irritated by the
+                season. The summer season causes them to stay indoors. And it makes
+                conditions pretty harsh to go out. During the day temperature rises to
+                a level that causes difficulty.
+            </p>
+        </section>
+
+        <section>
+            <p class="pb-3">
+                <strong>Conclusion</strong>: To conclude, we can say that the summer
+                season is not as bad as it looks. It is just like any other season. We
+                can also enjoy summer like any other season by finding the right ways
+                like kids. Moreover, the season is rich in a variety of fruits and
+                vegetables especially mango. Despite its defects, this season makes
+                soil soft for easy cultivation. It gives us plenty of fruits and
+                flowers. So we welcome it.
+            </p>
+        </section>
+    </main>
+
+    <!-- DopDown Script -->
+    <script>
+
+        const button = document.getElementById('dropdown-button');
+        const options = document.getElementById('dropdown-options');
+
+        button.addEventListener('click', () => {
+            options.classList.toggle('hidden');
+        });
+
+        // Close the dropdown when clicking outside of it
+        document.addEventListener('click', (event) => {
+            if (!options.contains(event.target) && !button.contains(event.target)) {
+                options.classList.add('hidden');
+            }
+        });
+
+    </script>
+    {% endblock content %}
+</body>
+
+</html>

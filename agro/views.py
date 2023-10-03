@@ -143,3 +143,28 @@ class ContactView(FormView):
 #         form = ContactForm()
 
 #     return render(request, 'contact.html', {'form': form})
+
+# Seasons
+
+class SummerView(TemplateView):
+    template_name = 'seasons/summer.html'
+    
+
+class RainyView(TemplateView):
+    template_name = 'seasons/rainy.html'
+    
+
+class AutumnView(TemplateView):
+    template_name = 'seasons/autumn.html'
+    
+
+class LateAutumnView(TemplateView):
+    template_name = 'seasons/late_autumn.html'
+    
+
+class WinterView(TemplateView):
+    template_name = 'seasons/winter.html'
+    
+
+class SpringView(TemplateView):
+    template_name = 'seasons/spring.html'
