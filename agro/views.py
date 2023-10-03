@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.views import View
 from django.views.generic import ListView, DetailView, TemplateView
+
 from .models import Product, FarmerProfile, BlogPost
 from .forms import ReviewForm  # Import any necessary forms
 from .forms import ContactForm
@@ -168,3 +169,23 @@ class WinterView(TemplateView):
 
 class SpringView(TemplateView):
     template_name = 'seasons/spring.html'
+    
+    
+# PdfView- Download the pdf by clicking on the Document button
+
+from django.shortcuts import HttpResponse
+from django.conf import settings
+import os
+
+def download_pdf(request):
+    # Define the path to the PDF file in your static files directory
+    pdf_path = os.path.join(settings.STATICFILES_DIRS[0], 'agriculture.pdf')
+
+    # Open the PDF file for reading
+    with open(pdf_path, 'rb') as pdf_file:
+        response = HttpResponse(pdf_file.read(), content_type='application/pdf')
+        response['Content-Disposition'] = 'attachment; filename="agriculture.pdf"'
+        return response
+
+
+    

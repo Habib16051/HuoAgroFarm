@@ -36,5 +36,8 @@ urlpatterns = [
     path('winter/', views.WinterView.as_view(), name='winter'),
     path('spring/', views.SpringView.as_view(), name='spring'),
     
+    # Documentation Download
+    path('document/', views.download_pdf, name='document'),
+    
 
 ]
