@@ -15,7 +15,8 @@ This project is being produce focusing on agriculture. That's all for now. we wi
 
 # Landing Page
 
-![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/d87006e8-d893-49ca-951a-f36c6133a848)
+![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/e56a3c26-6df8-46f0-a367-5bc2541e1049)
+
 
 
 # Features
