@@ -3,7 +3,7 @@ This project is being produce focusing on agriculture. That's all for now. we wi
 
 # Major Features:
 1. Responsive Website(Can be used smoothly by PC, Tablet and Mobile)
-2. 
+2. One of the special feature added for detecting the potato leaf disease Using ML and Deep Neural Network Technique
 
 # Landing Page
 
