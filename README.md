@@ -11,7 +11,9 @@ This project is being produce focusing on agriculture. That's all for now. we wi
 7. Tailwind Integration with Django
 8. streamlit application integrated with Django
 
-# Website Features:
+# What we Offers:
+
+We are commited to make a significant roles to our Bangladeshi Farmers! We aim to make such a platform where Our farmers, young generation will be more intersted to use modern technology and tools in the sector of agriculture. We will provide informations, resources, tools and will share our vision to inspire our people! We have god gifted weather, climate  and fertile land which is very preferable to grow agricultural products like Rice, Wheat, Potatoes and Vegetables! So we will keep update and contribute to make our platform in another level. Stay Tune!
 
 # Landing Page
 
