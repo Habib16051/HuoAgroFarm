@@ -3,7 +3,7 @@ This project is being produce focusing on agriculture. That's all for now. we wi
 
 # Major Technical Features:
 1. Responsive Website(Can be used smoothly in PC, Tablet and Mobile)
-2. One of the special feature added for detecting the potato leaf disease Using ML and Deep Neural Network Technique
+2. One of the special feature added by Q object Technique for detecting the potato leaf disease Using ML and Deep Neural Network Technique
 3. Added Pagination to make the website user friendly
 4. Search Option added for finding the related / categorical / similiar blog articles
 5. Automatic pdf Download Option available
