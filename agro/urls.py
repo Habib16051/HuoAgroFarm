@@ -39,5 +39,10 @@ urlpatterns = [
     # Documentation Download
     path('document/', views.download_pdf, name='document'),
     
+    
+    # Search for blog articles
+    path('search/', views.blog_search, name='search'),
+
+    
 
 ]

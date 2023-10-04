@@ -1,3 +1,6 @@
+import os
+from django.conf import settings
+from django.shortcuts import HttpResponse
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
@@ -40,6 +43,8 @@ class ProductDetailView(DetailView):
     context_object_name = 'product'
 
 # View for displaying a farmer's profile
+
+
 class FarmerProfileView(DetailView):
     model = FarmerProfile
     template_name = 'agro/farmer_profile.html'
@@ -48,6 +53,8 @@ class FarmerProfileView(DetailView):
     slug_url_kwarg = 'username'
 
 # View for submitting a review for a product
+
+
 class SubmitReviewView(View):
     template_name = 'agro/submit_review.html'
 
@@ -87,8 +94,7 @@ class BlogListView(ListView):
         page = self.request.GET.get('page')
         context['posts'] = paginator.get_page(page)
         return context
-    
-    
+
 
 # View for displaying a single blog post
 
@@ -149,33 +155,30 @@ class ContactView(FormView):
 
 class SummerView(TemplateView):
     template_name = 'seasons/summer.html'
-    
+
 
 class RainyView(TemplateView):
     template_name = 'seasons/rainy.html'
-    
+
 
 class AutumnView(TemplateView):
     template_name = 'seasons/autumn.html'
-    
+
 
 class LateAutumnView(TemplateView):
     template_name = 'seasons/late_autumn.html'
-    
+
 
 class WinterView(TemplateView):
     template_name = 'seasons/winter.html'
-    
+
 
 class SpringView(TemplateView):
     template_name = 'seasons/spring.html'
-    
-    
+
+
 # PdfView- Download the pdf by clicking on the Document button
 
-from django.shortcuts import HttpResponse
-from django.conf import settings
-import os
 
 def download_pdf(request):
     # Define the path to the PDF file in your static files directory
@@ -183,9 +186,24 @@ def download_pdf(request):
 
     # Open the PDF file for reading
     with open(pdf_path, 'rb') as pdf_file:
-        response = HttpResponse(pdf_file.read(), content_type='application/pdf')
+        response = HttpResponse(
+            pdf_file.read(), content_type='application/pdf')
         response['Content-Disposition'] = 'attachment; filename="agriculture.pdf"'
         return response
 
 
-    
+# search bar using elastic search
+from .models import BlogPost
+from .forms import BlogSearchForm
+from django.db.models import Q
+
+def blog_search(request):
+    form = BlogSearchForm()
+    results = []
+
+    if request.GET.get('query'):
+        query = request.GET['query']
+        # Use Q objects to perform a case-insensitive search in title and content fields
+        results = BlogPost.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
+
+    return render(request, 'agro/blog_search.html', {'form': form, 'results': results})
