@@ -23,5 +23,16 @@ please visit this link: https://github.com/Habib16051/potato-disease-detection
 
 ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/f9edfa8d-13b0-4ddd-b0af-8254fa5fd661)
 
+# Potato Disease Detection UI: 
+This is the User Interface of Potato Leaf Disease Detection where We can insert an image to detect the disease 
+
+![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/3b4a2678-ab4a-4b8f-8705-10884333b117)
+
+After inserted the image, Our trained model will analyze the image and will give the output result with feedback
+
+![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/f9756704-d9b2-468a-952d-fc4d0977b9e8)
+
+
+
 
 
