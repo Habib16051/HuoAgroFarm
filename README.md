@@ -15,7 +15,7 @@ This project is being produce focusing on agriculture. That's all for now. we wi
 
 # Features
 
-Agrotechnology: Live Potato Leaf Disease Detection
+Agrotechnology: Live Potato Leaf Disease Detection Section
 
 ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/a232b83f-1dcc-4ffe-a47f-495ec0253a77)
 
