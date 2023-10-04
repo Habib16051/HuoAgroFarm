@@ -43,6 +43,15 @@ After inserted the image, Our trained model will analyze the image and will give
 
 2. Products Section
 
+![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/d8122820-ac78-4eb2-82ea-8580848d3738)
+
+Product Details:
+![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/6bbc89a2-2950-40e7-9b20-f75c24a17b36)
+
+Stay with me! I will keep updating soon!
+
+
+
 
 
 
