@@ -9,7 +9,7 @@ This project is being produce focusing on agriculture. That's all for now. we wi
 5. Automatic pdf Download Option available
 6. Sending Email Option Added
 7. Tailwind Integration with Django
-8. 
+8. streamlit application integrated with Django
 
 # Website Features:
 
