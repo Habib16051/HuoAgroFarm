@@ -1,0 +1,70 @@
+How to create Internationalization and Localization in your application.
+
+1. Setup your project settings section like this:
+
+# Set the Default Language
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'UTC'
+
+USE_I18N = True # Internationalization
+USE_L10N = True # Localization
+USE_TZ = True   # Timezone
+
+# Define Supported Languages
+LANGUAGES = [
+    ('en', 'English'),
+    ('bn', 'Bengali'),
+    # Add more languages here if desired
+]
+
+
+# Configure Translation Files Path (.po add .mo)
+
+import os
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale')
+]
+
+2. Add LocaleMiddleware Path before the common middleware and after the sessions middleware:
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',  # Here it is
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+3. Now Create a view function in your views.py files for the i18n and l10n:
+from django.shortcuts import render
+from django.utils.translation import gettext as _
+
+def Local_Language(request):
+    greeting = _("Hello, world!")
+    return render(request, 'multiL/translator.html', {'greeting': greeting})
+
+# Create your views here.
+4. Create your urls.py:
+
+i18n_l10n/urls.py
+
+5. Then you can following step:
+
+A. Its time to make the a directory called 'locale' into your project root directory.
+
+B. Run the following command in the terminal:
+# Create .po files (if not already created) for English and Bengali
+python manage.py makemessages -l en
+python manage.py makemessages -l bn
+
+C. Open the .po and  Edit .po files and add translations
+
+and after that run the following command, it will generate .mo files which will generate binary files from .po files
+
+# Compile .mo files
+python manage.py compilemessages
+
+That's it! Thanks!!
