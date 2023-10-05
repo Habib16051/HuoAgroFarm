@@ -1227,11 +1227,11 @@ msgstr ""
 
 #: i18n_l10n/views.py:6
 msgid "Hello, world!"
-msgstr "হ্যালো! বিশ্ব!"
+msgstr "হ্যালো! পৃথিবী!"
 
 #: templates/multiL/translator.html:8
 msgid "Home"
-msgstr "ঘর"
+msgstr "আমি বাংলাদেশী"
 
 #: templates/multiL/translator.html:12
 msgid "Welcome"

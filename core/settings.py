@@ -34,13 +34,8 @@ INSTALLED_APPS = [
     # 3rd party apps
 ]
 
-ELASTICSEARCH_DSL = {
-    'default': {
-        'hosts': 'http://localhost',  # No need to specify the port (will default to 9200).
-    },
-}
 
-
+# Middleware configuration
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -54,6 +49,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'core.urls'
 
+# Templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -83,6 +79,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #     }
 # }
 
+
 # Postgres database
 
 DATABASES = {
@@ -95,8 +92,6 @@ DATABASES = {
         'PORT': '5432',            # Leave it empty to use the default PostgreSQL port (5432).
     }
 }
-
-
 
 
 # Password validation
