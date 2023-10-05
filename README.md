@@ -10,7 +10,7 @@ This project is being produce focusing on agriculture. That's all for now. we wi
 6. Sending Email Option Added
 7. Tailwind Integration with Django
 8. streamlit application integrated with Django
-9. Switched django deafult sqlite3 to Postgresql database to make the website more robust and rapidly accessible
+9. Used Postgresql database to make the website more robust and rapidly accessible
 10. Initial Internationalization (i18n) and Localizatin(l10n) is added for the testing purpsoe
 
 # What we Offers:
