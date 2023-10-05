@@ -50,7 +50,7 @@ Product Details:
 
 ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/6bbc89a2-2950-40e7-9b20-f75c24a17b36)
 
-Stay with me! I will keep updating soon!
+Stay with me! I will update soon!
 
 
 
