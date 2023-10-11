@@ -68,9 +68,9 @@ Product Details:
    ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/8da5ee49-3c72-4cb8-9460-7b158c483383)
 
 
+7. Contact
 
-
-
+   ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/d51f6685-5182-4659-8c90-ebf61a22eda6)
 
 
 
