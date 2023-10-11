@@ -81,6 +81,9 @@ Product Details:
 
    ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/d51f6685-5182-4659-8c90-ebf61a22eda6)
 
+8. Internationalization:
+
+![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/5afcd16c-d16b-4cf1-9450-f1fdc18024d1)
 
 
 
