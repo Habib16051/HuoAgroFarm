@@ -54,6 +54,11 @@ Product Details:
    
    ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/8b99e080-db31-4565-af65-3e4fcb432549)
 
+4. Blogs
+
+   ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/4ee6ac4b-aef1-446a-9179-6b0da3ad453f)
+
+
 
 
 
