@@ -70,7 +70,18 @@ Product Details:
 
 7. Contact
 
+   ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/3f7c42ab-287a-42dc-8dbc-56cf50fc3e8a)
+
+
+   Confirmation:
+
+   ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/7e58bdc6-9ab9-40d2-90f0-e017fd27816e)
+
+   Email:
+
    ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/d51f6685-5182-4659-8c90-ebf61a22eda6)
+
+
 
 
 
