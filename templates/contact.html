@@ -25,8 +25,8 @@
 </div> -->
 
 
-<div class="bg-gray-400 flex items-center justify-center ">
-    <div class="bg-green rounded-lg w-full max-w-md flex justify-center pt-10">
+<div class="flex items-center justify-center ">
+    <div class="rounded-lg w-full max-w-md flex justify-center pt-10">
         <!-- <h1 class="text-2xl font-bold mb-4 pt-6">Contact Us</h1> -->
         <form action="/contact/" method="post">
             {% csrf_token %}
@@ -54,7 +54,7 @@
             </div>
 
             <!-- Message Field -->
-            <div class="pt-6">
+            <div class="pt-4">
                 <label for="message" class="block text-white font-semibold pb-2">Message</label>
                 <textarea id="message" name="message" rows="4"
                     class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:border-green-500"
@@ -64,7 +64,7 @@
                 {% endif %}
             </div>
 
-            <div class="pt-6 flex justify-center">
+            <div class="pt-4 flex justify-center">
                 <button type="submit"
                     class="bg-green-500 hover:bg-pink-500 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline-green">
                     Submit
