@@ -50,7 +50,10 @@ Product Details:
 
 ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/6bbc89a2-2950-40e7-9b20-f75c24a17b36)
 
-Stay with me! I will update soon!
+3. Seasons
+   
+   ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/8b99e080-db31-4565-af65-3e4fcb432549)
+
 
 
 
