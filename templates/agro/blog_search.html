@@ -1,45 +1,48 @@
 {% extends "agro/base.html" %} {% load static %} {% block content %}
 
-<div
-  class="border border-blue-500 rounded-lg p-10 bg-slate-300 px-4 py-2 pt-10"
->
-  <div class="space-x-4 p-4 flex justify-center">
-    <form method="get" class="flex items-center">
-      {{ form.as_p }}
+<main class="bg-gray-200">
+  <div
+    class="border border-blue-500 rounded-lg p-10 bg-slate-300 px-4 py-2 pt-10"
+  >
+    <div class="space-x-4 p-4 flex justify-center">
+      <form method="get" class="flex items-center">
+        {{ form.as_p }}
 
-      <div class="pl-2">
-        <button
-          type="submit"
-          class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >
-          Search Query
-        </button>
-      </div>
-    </form>
-  </div>
-
-  <div class="p-4 space-x-4 flex justify-center">
-    {% if results %}
-    <h2>Search Results :</h2>
-
-    <div class="text-blue-500">
-      <ul>
-        {% for blog in results %}
-        <li>
-          <a href="{% url 'agro:blog_detail' blog.pk %}" class="hover:underline"
-            >{{ blog.title }}</a
+        <div class="pl-2">
+          <button
+            type="submit"
+            class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           >
-        </li>
-
-        {% endfor %}
-      </ul>
+            Search Query
+          </button>
+        </div>
+      </form>
     </div>
 
-    {% else %}
-    <p>There are no items to display.</p>
+    <div class="p-4 space-x-4 flex justify-center">
+      {% if results %}
+      <h2>Search Results :</h2>
 
-    {% endif %}
+      <div class="text-blue-500">
+        <ul>
+          {% for blog in results %}
+          <li>
+            <a
+              href="{% url 'agro:blog_detail' blog.pk %}"
+              class="hover:underline"
+              >{{ blog.title }}</a
+            >
+          </li>
+
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% else %}
+      <p>There are no items to display.</p>
+
+      {% endif %}
+    </div>
   </div>
-</div>
-
+</main>
 {% endblock content %}

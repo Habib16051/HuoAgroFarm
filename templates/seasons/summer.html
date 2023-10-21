@@ -27,12 +27,12 @@
 
         <div class="relative pb-10">
 
-            <button class="font-bold bg-green-500 px-4 py-2 rounded-lg gap-4">Home</button>
+            <button class="font-bold bg-green-500 px-4 py-2 rounded-lg gap-4"><a href="/">Home</a></button>
 
             <button id="dropdown-button" class="bg-green-500 text-white px-4 py-2 rounded-md focus:outline-none">
                 Dropdown
             </button>
-            <div id="dropdown-options" class="hidden absolute bottom-5 mt-2 py-2 w-48 border rounded-lg shadow-lg">
+            <div id="dropdown-options" class="hidden absolute top-full mt-2 py-2 w-48 border rounded-lg shadow-lg">
                 <!-- Dropdown options go here -->
                 <a href="{% url 'agro:summer' %}" class="block px-4 py-2 bg-gray-200 rounded-md mb-1">Summer Season</a>
                 <a href="{% url 'agro:rainy' %}" class="block px-4 py-2 bg-green-400 rounded-md mb-1">Rainy Season</a>
