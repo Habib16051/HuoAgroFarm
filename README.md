@@ -50,11 +50,46 @@ Product Details:
 
 ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/6bbc89a2-2950-40e7-9b20-f75c24a17b36)
 
-Stay with me! I will update soon!
+3. Seasons
+   
+   ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/8b99e080-db31-4565-af65-3e4fcb432549)
+
+4. Blogs
+
+   ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/4ee6ac4b-aef1-446a-9179-6b0da3ad453f)
+
+
+5. Blog Details
+
+   ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/5ab75e51-6926-4f88-b09f-f5f721976e2c)
+
+6. Blog Searching
+
+   ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/8da5ee49-3c72-4cb8-9460-7b158c483383)
+
+
+7. Contact
+
+   ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/3f7c42ab-287a-42dc-8dbc-56cf50fc3e8a)
+
+
+   Confirmation:
+
+   ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/7e58bdc6-9ab9-40d2-90f0-e017fd27816e)
+
+   Email:
+
+   ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/d51f6685-5182-4659-8c90-ebf61a22eda6)
+
+8. Internationalization:
+
+   ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/5afcd16c-d16b-4cf1-9450-f1fdc18024d1)
+
+9. Pagination
+
+   ![image](https://github.com/Habib16051/HuoAgroFarm/assets/39822204/2356190c-8e6b-4692-a149-feba1e7c26e2)
 
 
 
-
-
-
+The End.
 
