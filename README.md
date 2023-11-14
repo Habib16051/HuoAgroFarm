@@ -91,5 +91,6 @@ Product Details:
 
 
 
-The End.
+There are some exceptional features are coming...... Stay tune with us!
 
+Thanks!!
